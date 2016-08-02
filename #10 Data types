@@ -1,0 +1,104 @@
+1.
+function convertStrToArr(){
+var onlyNum = [];
+for(var i= 0; i<arguments.length; i++){
+if(parseInt(arguments[i])){
+onlyNum.push(arguments[i]);
+}
+}
+console.log(onlyNum);
+}
+convertStrToArr('2', '3', '4','das');
+
+2. 
+var onlyNum = [];
+function convertStrToArr(){
+for(var i= 0; i<arguments.length; i++){
+if(parseInt(arguments[i])){
+onlyNum.push(arguments[i]);
+}
+}
+}
+convertStrToArr('a', '2', '3');
+
+for(var i = 0; i< onlyNum.length; i++){
+onlyNum[i] = parseInt(onlyNum[i]);
+}
+var makeSum = onlyNum.reduce(function(sum, current){
+return sum + current;
+}, 0);
+console.log("[" + onlyNum + "]" + " sum of array number=" + makeSum);
+
+3.
+var typeOfUniqueSymbol = ' ';
+var arrayOfSymbols = [2, 3, '3', 2];
+function arr(){
+for(var i=0; i<arrayOfSymbols.length; i++){
+if(typeof(typeOfUniqueSymbol)==typeof(arrayOfSymbols[i])){
+console.log('uniqueElement=',arrayOfSymbols[i]);  }
+}
+}
+arr();
+
+
+4. 
+function uniqueString(string){
+    var uniqueElement='';
+    for(var i=0; i<string.length; i++){
+        for(var j=0; j<uniqueElement.length; j++){
+            if(string[i]==uniqueElement[j]){
+                var findElement = true;
+                break;
+            }
+        }
+        if(!findElement){
+            uniqueElement+=string[i];
+        }
+    }
+   return uniqueElement;
+}
+console.log( 'Number of unique symbols=',uniqueString('muhaha').length)
+
+5. 
+var listOfPersons = [{name:"Vasya", age:13} ,
+           {name:"Vasiliy", age:65}];
+    
+function getPensiorAge(arr){
+ var pensior = [];
+  for (var i=0; i<arr.length; i++){
+   if(arr[i].age > 64){
+     pensior.push(arr[i]);
+    }
+  }
+  return pensior;
+}
+
+var pensior = [];
+pensior = getPensiorAge(listOfPersons);
+for(var i=0; i< pensior.length; i++){
+console.log(pensior[i].name);
+}
+
+6.
+var array = [3, 2, 4, 2, 1, 5]; 
+array.shift(); 
+array.pop(); 
+var count=1; 
+function findElement(){ 
+for (var j=0; j<array.length; j++){ 
+for (var i=0; i<count; i++){ 
+if(count[i]<count[i+1]){ 
+currMin = 0; 
+} 
+
+else { 
+var min = Math.min.apply(null, array); 
+var max = Math.max.apply(null, array); 
+var currMin = min - max; 
+} 
+} 
+count++; 
+} 
+return currMin; 
+} 
+alert(findElement());
